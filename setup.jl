@@ -1,6 +1,7 @@
-Pkg.clone("https://github.com/JuliaPy/PyCall.jl")
+using Pkg
 ENV["PYTHON"] = "/usr/bin/python3"
-Pkg.build("PyCall")
+Pkg.add("PyCall")
 Pkg.add("PyPlot")
 Pkg.add("ProgressMeter")
 Pkg.add("Suppressor")
+Pkg.add("FEniCS")

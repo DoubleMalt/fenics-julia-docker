@@ -1,22 +1,23 @@
 # Docker
+
 This docker image it to allow testing and usage of FEniCS in Julia.
-It is based on https://github.com/tpapp/texlive-julia-minimal-docker. 
-After installing and accessing Julia in the Docker image, FEniCS can simply be installed by running Pkg.add("FEniCS").
-PyCall.jl and PyPlot.jl and related pathing dependencies are handled by the Docker image. It currently installs v0.6.3 of Julia, and the latest PPA release of FEniCS.
+It is based on https://github.com/ysimillides/fenics-julia-docker. 
 
 
 ## Running Docker
 
 To run the docker image you can simply call
+
 ```sh
-docker run -ti ysimillides/fenics-julia-docker 
+docker run -ti -v $PWD:/work doublemalt/fenics-julia-docker 
 ```
-and once inside, 'julia' can be accessed by calling
+
+This also mounts the current working directory under `/work` inside the container.
+
+Once inside, 'julia' can be accessed by calling
+
 ```sh
 julia
 ```
 on the command line
 
-## Help with Docker
-
-http://fenics.readthedocs.io/projects/containers/en/latest/ is a good starting point, or the official Docker tutorials.
